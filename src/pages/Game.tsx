@@ -63,12 +63,14 @@ export const Game = () => {
     useAnimationFrame((t) => {
         if (start && containerRef.current && ballRef.current) {
             if (ballx + ballRef.current.clientWidth >= containerRef.current.clientWidth) {
-                resetGame();
-                setScorePlayerOne((val) => val + 1);
+                // resetGame();
+                // setScorePlayerOne((val) => val + 1);
+                setDirection({ y: direction.y, x: -1 });
             }
             if (ballx <= 0) {
-                resetGame();
-                setScorePlayerTwo((val) => val + 1);
+                // resetGame();
+                // setScorePlayerTwo((val) => val + 1);
+                setDirection({ y: direction.y, x: 1 });
             }
             if (bally + ballRef.current.clientHeight >= containerRef.current.clientHeight) {
                 setDirection({ y: -1, x: direction.x });
@@ -92,9 +94,9 @@ export const Game = () => {
         score: 10,
     };
     const opponenTwo = {
-        name: 'youssef noam',
-        username: 'ynoam',
-        photo: 'https://cdn.intra.42.fr/users/ynoam.jpg',
+        name: 'Mohammed Ali Kellati',
+        username: 'mokellat',
+        photo: 'https://cdn.intra.42.fr/users/mokellat.jpg',
         score: 8,
     };
     // garbage value [FOR TEST]<----------------------------------------
